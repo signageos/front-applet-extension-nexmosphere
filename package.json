@@ -1,0 +1,27 @@
+{
+  "name": "front-applet-extension-nexmosphere",
+  "version": "0.0.0",
+  "description": "Nexmosphere extension for signageOS Front Applet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/signageos/front-applet-extension-nexmosphere.git"
+  },
+  "keywords": [
+    "signageos",
+    "sos",
+    "front-applet",
+    "nexmosphere",
+    "iot",
+    "sensors"
+  ],
+  "author": "signageOS <dev@signageos.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/signageos/front-applet-extension-nexmosphere/issues"
+  },
+  "homepage": "https://gitlab.com/signageos/front-applet-extension-nexmosphere#readme"
+}
