@@ -2,7 +2,7 @@
   "name": "front-applet-extension-nexmosphere",
   "version": "0.0.0",
   "description": "Nexmosphere extension for signageOS Front Applet",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "rm -rf dist/*",
     "build": "webpack",
