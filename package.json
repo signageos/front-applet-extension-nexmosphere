@@ -1,5 +1,5 @@
 {
-  "name": "front-applet-extension-nexmosphere",
+  "name": "@signageos/front-applet-extension-nexmosphere",
   "version": "0.0.0",
   "description": "Nexmosphere extension for signageOS Front Applet",
   "main": "dist/index.js",
