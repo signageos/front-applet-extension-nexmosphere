@@ -33,7 +33,7 @@ export default class SerialPort implements ISerialPort {
 
 	private bindEvents() {
 		this.serialPort.onData((data: Uint8Array) => {
-			const dataString = [...data].map((char: number) => String.fromCharCode(char)).join('');
+			const dataString = [...data].map((char: number) => String.fromCharCode(char)).join('').trimEnd();
 			this.eventEmitter.emit(SerialPortEvent.MESSAGE, dataString);
 		});
 	}

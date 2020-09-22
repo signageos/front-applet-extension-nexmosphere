@@ -9,13 +9,14 @@ describe('SerialPort', () => {
 
 	describe('on("message")', () => {
 
-		it('should call listener when underlying serial port emits message', () => {
+		it('should call listener when underlying serial port emits message and should remove trailing newline from the message', () => {
 			const frontAppletSerialPort = new MockFrontAppletSerialPort();
 			const serialPort = new SerialPort(frontAppletSerialPort as unknown as FrontAppletSerialPort);
 			const listener = sinon.spy();
 			serialPort.on(SerialPortEvent.MESSAGE, listener);
-			frontAppletSerialPort.emitData(Buffer.from('testMessage'));
+			frontAppletSerialPort.emitData(Buffer.from('testMessage\r\n'));
 			should(listener.callCount).equal(1, 'expected onData listener to be called once');
+			should(listener.getCall(0).args).deepEqual(['testMessage']);
 		});
 	});
 
