@@ -21,9 +21,9 @@ export default class SerialPort implements ISerialPort {
 
 	public removeAllListeners(event?: SerialPortEvent): void {
 		if (event) {
-			this.removeAllListeners(event);
+			this.eventEmitter.removeAllListeners(event);
 		} else {
-			this.removeAllListeners();
+			this.eventEmitter.removeAllListeners();
 		}
 	}
 
