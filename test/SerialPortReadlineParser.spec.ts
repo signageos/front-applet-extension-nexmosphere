@@ -6,7 +6,7 @@ import SerialPortReadlineParser from '../src/SerialPortReadlineParser';
 
 describe('SerialPortReadlineParser', () => {
 
-	it('should buffer data emitted by the underlying serial port and emit entire chunks delimited by CRLF', function () {
+	it('should buffer data emitted by the underlying serial port and emit entire chunks delimited by CRLF', () => {
 		const serialPort = new MockFrontAppletSerialPort();
 		const parser = new SerialPortReadlineParser(serialPort as unknown as SerialPort);
 		const listener = sinon.spy();

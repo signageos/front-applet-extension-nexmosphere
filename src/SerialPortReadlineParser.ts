@@ -6,14 +6,14 @@ const DELIMITER = '\r\n';
 export default class SerialPortReadlineParser {
 
 	private eventEmitter: EventEmitter;
-	private dataBuffer: string = '';
+	private dataBuffer = '';
 
 	constructor(private serialPort: SerialPort) {
 		this.eventEmitter = new EventEmitter();
 		this.bindEvents();
 	}
 
-	public onData(listener: (data: string) => void) {
+	public onData(listener: (data: string) => void): void {
 		this.eventEmitter.on('data', listener);
 	}
 
