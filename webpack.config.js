@@ -17,7 +17,7 @@ module.exports = {
 			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
 			{
 				test: /\.[tj]sx?$/,
-				exclude: /node_modules/,
+				exclude: /node_modules\/(?!(@signageos\/nexmosphere-sdk))/,
 				loader: 'babel-loader',
 				options: { presets: [require.resolve('@babel/preset-env')] },
 				enforce: 'post',
