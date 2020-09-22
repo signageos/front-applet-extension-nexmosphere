@@ -1,4 +1,4 @@
-import { EventEmitter } from "events";
+import { EventEmitter } from 'events';
 
 export default class MockFrontAppletSerialPort {
 
@@ -10,15 +10,15 @@ export default class MockFrontAppletSerialPort {
 		this.eventEmitter = new EventEmitter();
 	}
 
-	public onData(listener: (data: Uint8Array) => void) {
+	public onData(listener: (data: Uint8Array) => void): void {
 		this.eventEmitter.on('data', listener);
 	}
 
-	public emitData(data: Uint8Array) {
+	public emitData(data: Uint8Array): void {
 		this.eventEmitter.emit('data', data);
 	}
 
-	public async write(message: string | number[] | Uint8Array) {
+	public async write(message: string | number[] | Uint8Array): Promise<void> {
 		this.writtenMessages.push(message);
 	}
 }

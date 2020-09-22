@@ -1,5 +1,5 @@
-import * as sinon from "sinon";
-import * as should from "should";
+import * as sinon from 'sinon';
+import * as should from 'should';
 import FrontAppletSerialPort from '@signageos/front-applet/es6/FrontApplet/Hardware/SerialPort';
 import { SerialPortEvent } from '@signageos/nexmosphere-sdk/es6/ISerialPort';
 import SerialPort from '../src/SerialPort';

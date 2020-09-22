@@ -1,4 +1,4 @@
-import { EventEmitter } from "events";
+import { EventEmitter } from 'events';
 import ISerialPort, { SerialPortEvent } from '@signageos/nexmosphere-sdk/es6/ISerialPort';
 import FrontAppletSerialPort from '@signageos/front-applet/es6/FrontApplet/Hardware/SerialPort';
 
@@ -15,7 +15,7 @@ export default class SerialPort implements ISerialPort {
 		this.eventEmitter.on(event, listener);
 	}
 
-	public removeListener(event: SerialPortEvent, listener: (...args: any[]) => void): void {
+	public removeListener(event: SerialPortEvent, listener: (...args: unknown[]) => void): void {
 		this.eventEmitter.removeListener(event, listener);
 	}
 
