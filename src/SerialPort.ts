@@ -3,6 +3,9 @@ import ISerialPort, { SerialPortEvent } from '@signageos/nexmosphere-sdk/es6/ISe
 import FrontAppletSerialPort from '@signageos/front-applet/es6/FrontApplet/Hardware/SerialPort';
 import SerialPortReadlineParser from './SerialPortReadlineParser';
 
+/**
+ * Wrapper class that wraps serial port instance from front applet and implements ISerialPort interface that nexmosphere library requires
+ */
 export default class SerialPort implements ISerialPort {
 
 	private eventEmitter: EventEmitter;
