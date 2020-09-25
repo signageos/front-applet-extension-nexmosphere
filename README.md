@@ -15,7 +15,7 @@ the same way in your code.
 
 Every application starts with creating a nexmosphere instance that needs a serial port.
 
-```
+```javascript
 const sos = require('@signageos/front-applet');
 const nexmosphere = require('@signageos/front-applet-extension-nexmosphere');
 
@@ -35,7 +35,7 @@ You can find more detail about the various APIs there.
 
 ### Button
 
-```
+```javascript
 const buttonAddress = 2;
 const buttonIndex = 0;
 const button = nexmosphere.createButton(serialPort, buttonAddress, buttonIndex);
@@ -46,7 +46,7 @@ button.on('released', () => console.log('buton was released'));
 
 ### RFID Antenna
 
-```
+```javascript
 const rfidAntennaAddress = 5;
 const rfidAntenna = nexmosphere.createRfidAntenna(serialPort, rfidAntennaAddress);
 
