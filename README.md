@@ -38,7 +38,7 @@ You can find more detail about the various APIs there.
 ```javascript
 const buttonAddress = 2;
 const buttonIndex = 0;
-const button = nexmosphere.createButton(serialPort, buttonAddress, buttonIndex);
+const button = nexmosphere.createButton(buttonAddress, buttonIndex);
 
 button.on('pressed', () => console.log('buton was pressed'));
 button.on('released', () => console.log('buton was released'));
@@ -48,7 +48,7 @@ button.on('released', () => console.log('buton was released'));
 
 ```javascript
 const rfidAntennaAddress = 5;
-const rfidAntenna = nexmosphere.createRfidAntenna(serialPort, rfidAntennaAddress);
+const rfidAntenna = nexmosphere.createRfidAntenna(rfidAntennaAddress);
 
 rfidAntenna.on('picked', (tag) => console.log(`tag ${tag} was picked`));
 rfidAntenna.on('placed', (tag) => console.log(`tag ${tag} was placed`));
