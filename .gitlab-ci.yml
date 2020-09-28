@@ -1,5 +1,9 @@
 image: $CI_REGISTRY/signageos/docker-node:12.16.1-alpine-build
 
+variables:
+  AWS_S3_STANDALONE_LIB_PATH: s3://signageos-public/lib/front-applet-extension-nexmosphere
+  STANDALONE_LIB_FILENAME: front-applet-extension-nexmosphere.js
+
 stages:
   - prepare
   - test
@@ -105,6 +109,22 @@ publish:npm-public:
     - export NPM_AUTH_TOKEN=$PUBLIC_NPM_AUTH_TOKEN
     - tools/prepare-npm-public.sh
     - npm publish --ignore-scripts --tag $TAG
+
+publish:standalone-lib:
+  image: alpine:3.12
+  stage: publish
+#  only:
+#    - tags
+  needs:
+    - prepare
+    - build
+  before_script: []
+  script:
+    - apk update
+    - apk add aws-cli
+    - VERSION=`cat ./VERSION`
+    - aws s3 cp dist/browser.js ${AWS_S3_STANDALONE_LIB_PATH}/${VERSION}/${STANDALONE_LIB_FILENAME}
+    - aws s3 cp dist/browser.js ${AWS_S3_STANDALONE_LIB_PATH}/latest/${STANDALONE_LIB_FILENAME}
 
 release:tag:
   image: $CI_REGISTRY/signageos/docker:master
