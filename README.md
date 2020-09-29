@@ -17,7 +17,7 @@ Every application starts with creating a nexmosphere instance that needs a seria
 
 ```javascript
 const sos = require('@signageos/front-applet');
-const nexmosphere = require('@signageos/front-applet-extension-nexmosphere');
+const Nexmosphere = require('@signageos/front-applet-extension-nexmosphere');
 
 sos.onReady().then(async () => {
     const serialPort = await sos.hardware.openSerialPort({
