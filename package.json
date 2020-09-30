@@ -62,7 +62,7 @@
     "webpack-cli": "4.0.0-beta.2"
   },
   "dependencies": {
-    "@signageos/front-applet": "4.4.0-ma-serialport.577",
-    "@signageos/nexmosphere-sdk": "0.1.0"
+    "@signageos/front-applet": "^4.4.0",
+    "@signageos/nexmosphere-sdk": "^0.1.0"
   }
 }
