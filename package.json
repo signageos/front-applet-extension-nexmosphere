@@ -63,6 +63,6 @@
   },
   "dependencies": {
     "@signageos/front-applet": "^4.4.0",
-    "@signageos/nexmosphere-sdk": "^0.1.0"
+    "@signageos/nexmosphere-sdk": "0.2.1"
   }
 }
